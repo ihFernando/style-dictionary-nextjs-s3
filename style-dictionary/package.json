@@ -1,0 +1,15 @@
+{
+  "name": "style-dictionary-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "style-dictionary build"
+  },
+  "devDependencies": {
+    "style-dictionary": "^2.2.1"
+  },
+  "author": "ihFernando",
+  "license": "ISC"
+}

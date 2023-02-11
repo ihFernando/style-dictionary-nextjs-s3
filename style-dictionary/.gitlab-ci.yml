@@ -1,0 +1,33 @@
+image: node:12-alpine
+
+stages:
+  - build
+  - upload
+
+build:
+  stage: build
+  script:
+    - echo "Installing packages..."
+    - npm install
+    - echo "Install complete."
+    - echo "Starting to compile the code..."
+    - npm run build
+    - ls
+    - echo "Compile complete."
+
+cache:
+  paths:
+    - build/
+
+  upload-to-s3:
+    stage: upload
+    image:
+      name: amazon/aws-cli
+      entrypoint: [""]
+    script:
+      - echo "Starting to configure the access to AWS"
+      - aws configure set region us-east-1
+      - echo "Configuration complete."
+      - echo "Starting to upload the files to s3 bucket"
+      - aws s3 sync build s3://$S3_BUCKET
+      - echo "Uploading complete."
