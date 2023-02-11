@@ -1,0 +1,19 @@
+@import url("https://s3-design-system-files.s3.amazonaws.com/css/_variables.css");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color-base-gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: var(--color-base-red);
+}
